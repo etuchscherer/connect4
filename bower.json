@@ -1,0 +1,21 @@
+{
+  "name": "connect4",
+  "version": "0.0.0",
+  "homepage": "https://github.com/etuchscherer/connect4",
+  "authors": [
+    "eric.tuchscherer <eric.tuchscherer@classmates.com>"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "devDependencies": {
+    "bootstrap": "~3.1.1",
+    "ember": "~1.5.1",
+    "socket.io-client": "~1.0.6"
+  }
+}

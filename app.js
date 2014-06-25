@@ -4,9 +4,11 @@ var http = require('http').Server(app);
 var io = require('socket.io')(http);
 
 app.use('/', express.static(__dirname + '/public'));
+app.use('/assets', express.static(__dirname + '/bower_components'));
 
 http.listen(3000, function(){
   console.log('server up, listening on *:3000');
+  console.log('⌃C to quit');
 });
 
 io.on('connection', function(socket){
