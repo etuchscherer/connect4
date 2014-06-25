@@ -1,0 +1,1 @@
+window.Application = Ember.Application.create();

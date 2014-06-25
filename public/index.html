@@ -2,50 +2,14 @@
 <html>
   <head>
     <title>Socket.IO chat</title>
-    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
-    <script src="/socket.io/socket.io.js"></script>
-    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.js"></script>
-    <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
-    <script>
-      $(document).ready(function() {
-
-        var socket = io();
-
-        function cell(x,y) {
-          return $('.row'+y+' :eq('+x+')').find('span.label');
-        }
-
-        socket.on('connect4', function(msg){
-          for (var y = 0; y < 6; y++) {
-            for (var x = 0; x < 7; x++) {
-              cellSpan = cell(x,y).text(msg[y][x]);
-            }
-          }
-        });
-
-        $('a.coin-slot').click(function(e) {
-          e.preventDefault();
-          value = $(e.target).data('id');
-
-          console.log('you clicked id:', value);
-
-          socket.emit('connect4-move', {move: value});
-        });
-
-        $('a.send').click(function(e){
-          e.preventDefault();
-          socket.emit('connect4', 'foo');
-          console.log('emiting message');
-          socket.emit('chat message', $('#m').val());
-          $('#m').val('');
-          return false;
-        });
-
-        socket.on('chat message', function(msg){
-          $('#messages').append($('<li>').text(msg));
-        });
-      });
-    </script>
+    <link rel="stylesheet" href="/assets/bootstrap/dist/css/bootstrap.min.css">
+    <script src="/assets/jquery/dist/jquery.js"></script>
+    <script src="/assets/socket.io-client/socket.io.js"></script>
+    <script src="/assets/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="/assets/handlebars/handlebars.js"></script>
+    <script src="/assets/ember/ember.js"></script>
+    <script src="/js/main.js"></script>
+    <script src="/js/app.js"></script>
   </head>
   <body>
     <div class="container-fluid">
